@@ -1,14 +1,16 @@
 public class Queue {
     private int rear;
+    private int front;
     private int queue[] = new int[10];
 
     public Queue() {
+        this.front = 0;
 		this.rear = 4;
 		queue[0] = 3;
 		queue[1] = 6;
 		queue[2] = 5;
 		queue[3] = 2;
-		queue[4] = 70;
+		queue[4] = 7;
 	}
 
     public void enQueue(){}
@@ -23,16 +25,16 @@ public class Queue {
 
     public void show(){
 		System.out.println();
-        for (int i = 0; i < this.rear; i++) {
+        for (int i = 0; i <= this.rear; i++) {
             System.out.print("|‾‾‾‾‾|  ");
         }
         System.out.println();
-		for (int i = 0; i < this.rear-1; i++) {
+		for (int i = 0; i <= this.rear-1; i++) {
 			System.out.printf("| %- 3d |——",queue[i]);
 		}
-        System.out.printf("| %- 3d |",queue[this.rear-1]);
+        System.out.printf("| %- 3d |",queue[this.rear]);
         System.out.println();
-        for (int i = 0; i < this.rear; i++) {
+        for (int i = 0; i <= this.rear; i++) {
             System.out.print("|_____|  ");
         }
 		System.out.println();
