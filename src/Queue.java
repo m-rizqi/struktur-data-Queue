@@ -15,13 +15,42 @@ public class Queue {
 
     public void enQueue(){}
     
-    public void deQueue(){}
+    // ketika queue hampir kosong, front dan rear di set ke -1
+    // untuk pengaplikasian enQueue, mohon dicek apakah queue kosong atau tidak
+    public int deQueue(){
+        if(isEmpty()) {
+            return -1;
+        }
+        else {
+            int data = queue[front];
+            if(this.front == this.rear) {
+                this.front = -1;
+                this.rear = -1;
+            }
+            else {
+                // front tidak akan melebihi ukuran 10
+                this.front = (this.front + 1)%10;
+            }
+            return data;
+        }
+    }
     
-    public void isEmpty(){}
+    public boolean isEmpty(){
+        if(this.front == -1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
     
     public void isFull(){}
     
-    public void clear(){}
+    public void clear(){
+        while(!this.isEmpty()) {
+            this.deQueue();
+        }
+    }
 
     public void show(){
 		System.out.println();
