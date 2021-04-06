@@ -4,13 +4,18 @@ public class Queue {
     private int queue[] = new int[10];
 
     public Queue() {
-        this.front = 0;
-		this.rear = 4;
+        this.front = 5;
+		this.rear = 2;
 		queue[0] = 3;
 		queue[1] = 6;
 		queue[2] = 5;
 		queue[3] = 2;
 		queue[4] = 7;
+		queue[5] = 6;
+		queue[6] = 5;
+		queue[7] = 2;
+		queue[8] = 7;
+		queue[9] = 7;		
 	}
 
     public void enQueue(){}
@@ -53,22 +58,41 @@ public class Queue {
     }
 
     public void show(){
-		System.out.println();
-        for (int i = 0; i <= this.rear; i++) {
-            System.out.print("|‾‾‾‾‾|  ");
+        if (isEmpty()) {
+            System.out.println("Queue Kosong");
+        } else {
+            int ln = isFull() ? 9 : this.rear > this.front ? Math.abs(this.front - this.rear) + 1 : (11 - Math.abs(this.front - this.rear));
+            System.out.println();
+            for (int i = 1; i <= ln ; i++) {
+                System.out.print("|‾‾‾‾‾|  ");
+            }
+            System.out.println();
+            if (this.rear > this.front){
+                for (int i = this.front; i <= this.rear-1; i++) {
+                    System.out.printf("| %- 3d |——",queue[i]);
+                }
+                System.out.printf("| %- 3d |",queue[this.rear]);
+            }else{
+                for (int i = this.front; i <= 9; i++) {
+                    System.out.printf("| %- 3d |——",queue[i]);
+                }
+                for (int i = 0; i < this.rear ; i++) {
+                    System.out.printf("| %- 3d |——",queue[i]);
+                }
+                System.out.printf("| %- 3d |",queue[this.rear]);
+            }
+            System.out.println(); 
+            for (int i = 1; i <= ln; i++) {
+                System.out.print("|_____|  ");
+            }
+            System.out.println();
         }
-        System.out.println();
-		for (int i = 0; i <= this.rear-1; i++) {
-			System.out.printf("| %- 3d |——",queue[i]);
-		}
-        System.out.printf("| %- 3d |",queue[this.rear]);
-        System.out.println();
-        for (int i = 0; i <= this.rear; i++) {
-            System.out.print("|_____|  ");
-        }
-		System.out.println();
 		System.out.println();
 	}
+
+    public int getFront(){
+        return this.front;
+    }
     
     public int getRear(){
         return this.rear;
