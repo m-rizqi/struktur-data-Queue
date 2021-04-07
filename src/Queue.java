@@ -4,18 +4,13 @@ public class Queue {
     private int queue[] = new int[10];
 
     public Queue() {
-        this.front = 5;
-		this.rear = 2;
+        this.front = 0;
+		this.rear = 4;
 		queue[0] = 3;
 		queue[1] = 6;
 		queue[2] = 5;
 		queue[3] = 2;
-		queue[4] = 7;
-		queue[5] = 6;
-		queue[6] = 5;
-		queue[7] = 2;
-		queue[8] = 7;
-		queue[9] = 7;		
+		queue[4] = 7;		
 	}
 
     public void enQueue(){}
@@ -50,6 +45,8 @@ public class Queue {
     }
     
     public void isFull(){}
+
+    public void peek(){}
     
     public void clear(){
         while(!this.isEmpty()) {

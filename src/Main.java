@@ -1,9 +1,9 @@
-import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+		int data;
         Queue queue = new Queue();
         Scanner input = new Scanner(System.in);
         boolean exit = true;
@@ -15,28 +15,39 @@ public class Main {
 				case 1:
 					System.out.println("\n=========================");
 					System.out.println("| T A M B A H   D A T A |");
-                    System.out.println("| Masukkan data :       |");
+					System.out.println("=========================");
+                    System.out.printf("| Masukkan data : ");
 					break;
 			
 				case 2:
 					System.out.println("\n=========================");
 					System.out.println("|  A M B I L   D A T A  |");
+					System.out.println("=========================");
+					data = queue.deQueue();
+					if (data != -1) {
+						System.out.println("| Data = "+data+"\n");
+					} else {
+						System.err.println("!-- Queue Kosong --!\n");
+					}
 					break;
 			
 				case 3:
 					System.out.println("\n=========================");
 					System.out.println("| D A T A  P E R T A M A |");
+					System.out.println("=========================");
 					break;
 			
 				case 4:
 					System.out.println("\n=========================");
 					System.out.println("|  S E M U A   D A T A  |");
+					System.out.println("=========================");
                     queue.show();
 					break;
 			
 				case 5:
 					System.out.println("\n=========================");
 					System.out.println("|   B U A T   B A R U   |");
+					System.out.println("=========================");
 					break;
 			
 				case 6:
