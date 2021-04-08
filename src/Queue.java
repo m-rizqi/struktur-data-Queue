@@ -44,9 +44,22 @@ public class Queue {
         }
     }
     
-    public void isFull(){}
+     public boolean isFull(){
+        if(this.front == this.queue.length-1){
+            return true;
+        } else{
+            return false;
+        }
+    }
+    
 
-    public void peek(){}
+    public long peek(){
+        if(!this.isEmpty()){
+            return queue[front];
+        } else{
+            return -1;
+        }
+    }
     
     public void clear(){
         while(!this.isEmpty()) {
