@@ -44,7 +44,7 @@ public class Queue {
         }
     }
     
-     public boolean isFull(){
+    public boolean isFull(){
         if(this.front == this.queue.length-1){
             return true;
         } else{
@@ -53,7 +53,7 @@ public class Queue {
     }
     
 
-    public long peek(){
+    public int peek(){
         if(!this.isEmpty()){
             return queue[front];
         } else{

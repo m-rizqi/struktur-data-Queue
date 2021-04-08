@@ -35,6 +35,12 @@ public class Main {
 					System.out.println("\n=========================");
 					System.out.println("| D A T A  P E R T A M A |");
 					System.out.println("=========================");
+					data = queue.peek();
+					if (data != -1) {
+						System.out.println("| Data = " + data + "\n");
+					} else {
+						System.err.println("!-- Queue Kosong --!\n");
+					}
 					break;
 			
 				case 4:
@@ -48,6 +54,10 @@ public class Main {
 					System.out.println("\n=========================");
 					System.out.println("|   B U A T   B A R U   |");
 					System.out.println("=========================");
+					queue.clear();
+					System.out.println("<-- Queue berhasil dibuat -->");
+					System.out.print("Masukan Data Pertama : ");
+					data = input.nextInt();
 					break;
 			
 				case 6:
