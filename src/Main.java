@@ -16,7 +16,10 @@ public class Main {
 					System.out.println("\n=========================");
 					System.out.println("| T A M B A H   D A T A |");
 					System.out.println("=========================");
-                    System.out.printf("| Masukkan data : ");
+                    System.out.print("| Masukkan data : ");
+					data = input.nextInt();
+					queue.enQueue(data);
+					System.out.println();
 					break;
 			
 				case 2:
@@ -58,6 +61,8 @@ public class Main {
 					System.out.println("<-- Queue berhasil dibuat -->");
 					System.out.print("Masukan Data Pertama : ");
 					data = input.nextInt();
+					queue.enQueue(data);
+					System.out.println();
 					break;
 			
 				case 6:

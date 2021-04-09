@@ -1,7 +1,8 @@
 public class Queue {
     private int rear;
     private int front;
-    private int queue[] = new int[10];
+    private int max = 10;
+    private int queue[] = new int[max];
 
     public Queue() {
         this.front = 0;
@@ -13,7 +14,21 @@ public class Queue {
 		queue[4] = 7;		
 	}
 
-    public void enQueue(){}
+    public void enQueue(int data){
+        if(isFull()){
+            System.out.println("!-- Queue sudah penuh --!");
+        }else if(isEmpty()){
+            this.rear = 0;
+            this.front = 0;
+        }else{
+            if (this.rear == max - 1) {
+                this.rear = 0;
+            } else {
+                this.rear++;
+            }
+        }
+        this.queue[this.rear] = data;
+    }
     
     // ketika queue hampir kosong, front dan rear di set ke -1
     // untuk pengaplikasian enQueue, mohon dicek apakah queue kosong atau tidak
@@ -69,7 +84,7 @@ public class Queue {
 
     public void show(){
         if (isEmpty()) {
-            System.out.println("Queue Kosong");
+            System.out.println("!-- Queue Kosong --!");
         } else {
             int ln = isFull() ? 9 : this.rear > this.front ? Math.abs(this.front - this.rear) + 1 : (11 - Math.abs(this.front - this.rear));
             System.out.println();
