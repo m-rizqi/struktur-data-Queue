@@ -60,11 +60,13 @@ public class Queue {
     }
     
     public boolean isFull(){
-        if(this.front == this.queue.length-1){
-            return true;
-        } else{
-            return false;
+        int next;
+        if(this.rear == max-1){
+            next = 0;
+        }else{
+            next = this.rear +1;
         }
+        return (next == this.front);
     }
     
 
@@ -78,7 +80,7 @@ public class Queue {
     
     public void clear(){
         while(!this.isEmpty()) {
-            this.deQueue();
+            deQueue();
         }
     }
 
@@ -86,13 +88,13 @@ public class Queue {
         if (isEmpty()) {
             System.out.println("!-- Queue Kosong --!");
         } else {
-            int ln = isFull() ? 9 : this.rear > this.front ? Math.abs(this.front - this.rear) + 1 : (11 - Math.abs(this.front - this.rear));
+            int ln = isFull() ? 10 : this.rear >= this.front ? Math.abs(this.front - this.rear) + 1 : (11 - Math.abs(this.front - this.rear));
             System.out.println();
             for (int i = 1; i <= ln ; i++) {
                 System.out.print("|‾‾‾‾‾|  ");
             }
             System.out.println();
-            if (this.rear > this.front){
+            if (this.rear >= this.front){
                 for (int i = this.front; i <= this.rear-1; i++) {
                     System.out.printf("| %- 3d |——",queue[i]);
                 }

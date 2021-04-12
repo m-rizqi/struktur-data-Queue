@@ -59,10 +59,7 @@ public class Main {
 					System.out.println("=========================");
 					queue.clear();
 					System.out.println("<-- Queue berhasil dibuat -->");
-					System.out.print("Masukan Data Pertama : ");
-					data = input.nextInt();
-					queue.enQueue(data);
-					System.out.println();
+					System.out.println("Silahkan menambahkan data melalui menu no. 1\n");
 					break;
 			
 				case 6:
