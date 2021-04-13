@@ -6,13 +6,13 @@ public class Queue {
 
     public Queue() {
         this.front = 0;
-		this.rear = 4;
-		queue[0] = 3;
-		queue[1] = 6;
-		queue[2] = 5;
-		queue[3] = 2;
-		queue[4] = 7;		
-	}
+        this.rear = 4;
+        queue[0] = 3;
+        queue[1] = 6;
+        queue[2] = 5;
+        queue[3] = 2;
+        queue[4] = 7;       
+    }
 
     public void enQueue(int data){
         if(isFull()){
@@ -20,14 +20,16 @@ public class Queue {
         }else if(isEmpty()){
             this.rear = 0;
             this.front = 0;
+            this.queue[this.rear] = data;
         }else{
             if (this.rear == max - 1) {
                 this.rear = 0;
             } else {
                 this.rear++;
             }
+            this.queue[this.rear] = data;
         }
-        this.queue[this.rear] = data;
+        
     }
     
     // ketika queue hampir kosong, front dan rear di set ke -1
@@ -91,7 +93,7 @@ public class Queue {
             int ln = isFull() ? 10 : this.rear >= this.front ? Math.abs(this.front - this.rear) + 1 : (11 - Math.abs(this.front - this.rear));
             System.out.println();
             for (int i = 1; i <= ln ; i++) {
-                System.out.print("|‾‾‾‾‾|  ");
+                System.out.print("|`````|  ");
             }
             System.out.println();
             if (this.rear >= this.front){
@@ -114,8 +116,8 @@ public class Queue {
             }
             System.out.println();
         }
-		System.out.println();
-	}
+        System.out.println();
+    }
 
     public int getFront(){
         return this.front;
